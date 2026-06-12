@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  /* Stop the screen from bouncing when you scroll past the top/bottom */
+  overscroll-behavior-y: none;
+  /* Kill the ugly blue flash when you tap a button on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Stop users from accidentally highlighting the whole UI when swiping */
+  user-select: none;
+  background-color: #0A0F0D;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Completely hide web scrollbars but keep the ability to scroll */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Allow text selection ONLY in the reader view */
+.reader-content {
+  user-select: text;
+}
+
+/* Additional professional animations */
+button, div[onClick], [role="button"] {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+button:active, div[onClick]:active, [role="button"]:active {
+  transform: scale(0.97);
+}
+
+/* Pulse animation for loading skeletons */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Smooth scrolling for reader */
+.reader-content {
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
